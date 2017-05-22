@@ -38,7 +38,7 @@ const mutations = {
     String.prototype.replaceAll = function(s1, s2){
       return this.replace(new RegExp(s1, "gm"), s2)
     }
-    all.body = all.body.replaceAll('src=\"', 'src=\"http://lovestreet.leanapp.cn/zhihu/resource?url=')
+    all.body = all.body.replaceAll('src=\"', 'src=\"https://lovestreet.leanapp.cn/zhihu/resource?url=')
     all.body = all.body.replaceAll('<div class=\"img-place-holder\"></div>', '')
     state.newsDetail = all
   },
@@ -56,32 +56,32 @@ const mutations = {
 }
 const actions = {
   FetchNewsLastest({commit}) {
-    axios.get('http://lovestreet.leanapp.cn/zhihu/news/latest')
+    axios.get('https://lovestreet.leanapp.cn/zhihu/news/latest')
       .then(res=>{
         commit('DoneNewsLastest', res.data)
       }).catch(err => { console.log(err)} )
   },
   FetchNewsDetail({commit}, id) {
-    axios.get('http://lovestreet.leanapp.cn/zhihu/news/'+id)
+    axios.get('https://lovestreet.leanapp.cn/zhihu/news/'+id)
       .then(res => {
         commit('DoneNewsDetail', res.data)
       }).catch(err => {console.log(err)})
   },
   FetchNewsLastestMore({commit}) {
     var date = state.time.format("YYYYMMDD")
-    axios.get('http://lovestreet.leanapp.cn/zhihu/before/' + date)
+    axios.get('https://lovestreet.leanapp.cn/zhihu/before/' + date)
       .then(res => {
         commit('DoneNewsLastestMore', res.data)
       }).catch(err=>{console.log(err)})
   },
   FetchThemes({commit}) {
-    axios.get('http://lovestreet.leanapp.cn/zhihu/themes')
+    axios.get('https://lovestreet.leanapp.cn/zhihu/themes')
       .then(res => {
         commit('DoneThemes', res.data)
       }).catch(err => {console.log(err)})
   },
   FetchThemesList({commit}, id) {
-    axios.get('http://lovestreet.leanapp.cn/zhihu/themes/' + id)
+    axios.get('https://lovestreet.leanapp.cn/zhihu/themes/' + id)
       .then(res=>{
         commit('DoneThemesList', res.data)
       }).catch(err=>{console.log(err)})
