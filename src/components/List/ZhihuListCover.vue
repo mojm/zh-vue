@@ -2,7 +2,7 @@
 <div class="zhihu-list-cover m1">
 	<div class="clearfix">
     <div class="col col-3 center">
-      <img :src="'http://lovestreet.leanapp.cn/zhihu/resource?url='+images" width="60" alt="" class="rounded m1">
+      <img :src="'https://lovestreet.leanapp.cn/zhihu/resource?url='+images" width="60" alt="" class="rounded m1">
     </div>
     <div class="col col-9">
       <p class="h6 mt1 mb1">{{title}}</p>
